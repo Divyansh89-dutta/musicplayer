@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css">
+</head>
+<style>
+            #volume, #seek {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #ff69b4; 
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        #volume:hover, #seek:hover {
+            opacity: 1;
+        }
+        #volume::-webkit-slider-thumb, #seek::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ff69b4; 
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        #volume::-moz-range-thumb, #seek::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #ff69b4; 
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+</style>
+<body>
+    <div class="main h-screen bg-gray-500 w-full flex justify-center items-center">
+        <div class="box bg-[#E8B9B8] h-[70vh] w-[22vw] rounded-[30px] border-[10px] p-5">
+            <div class="icon flex w-full justify-between">
+                <i class="text-2xl font-bold text-[#CBAEB9] bg-[#FCFEFE] rounded-full px-3 p-2 ri-arrow-drop-left-line"></i>
+                <i class="text-2xl font-bold text-[#CBAEB9] bg-[#FCFEFE] rounded-full px-3 p-2 ri-menu-line"></i>
+            </div>
+           <div class="flex flex-col items-center justify-center w-full">
+            <div class="img bg-[url(https://images.unsplash.com/photo-1505672984986-b7c468c7a134?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center h-40 w-40 border-[10px] rounded-full"></div>
+            <div class="name flex flex-col items-center gap-2">
+             <h1 class="text-4xl text-black font-semibold">Kyon</h1>
+             <h1 class="text-gray-700 text-2xl font-semibold">Pritam</h1>
+         </div>
+           </div>
+           <div class="flex items-center mt-4">
+            <span class="current-time text-white">0:00</span>
+            <input type="range" id="seek" class="w-full mx-2" min="0" max="100" value="0">
+            <span class="duration text-white">0:00</span>
+        </div>
+           <div class="flex justify-between items-center">
+            <i class="previous hover:text-white duration-300 hover:bg-gray-600 px-2 py-1 rounded-full text-2xl ri-contract-left-line"></i>
+            <i class="play text-2xl hover:text-white duration-300 hover:bg-gray-600 px-2 py-1 rounded-full ri-play-fill"></i>
+            <i class="pause hidden text-2xl hover:text-white duration-300 hover:bg-gray-600 px-2 py-1 rounded-full ri-pause-fill"></i>
+            <i class="next hover:text-white duration-300 hover:bg-gray-600 px-2 py-1 rounded-full text-2xl ri-contract-right-line"></i>
+        </div>
+        <div class="volume-control mt-4 flex items-center gap-2">
+            <button id="volume-down" class="text-white bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <i class="ri-subtract-fill"></i>
+            </button>
+            <input type="range" id="volume" class="w-full" min="0" max="1" step="0.01">
+            <button id="volume-up" class="text-white bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <i class="ri-add-fill"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+    <audio src="SpotifyMate.com - Kyon - Pritam.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
